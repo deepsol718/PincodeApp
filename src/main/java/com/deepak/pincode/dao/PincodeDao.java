@@ -10,4 +10,6 @@ public interface PincodeDao {
 
     public List<Pincode> getListByOfficeName(String office);
 
+    public List<Pincode> getAll();
+
 }

@@ -33,4 +33,11 @@ public class PincodeDaoImpl implements PincodeDao {
         List<Pincode> list = this.jdbcTemplate.query(query,rowMapper,office);
         return list;
     }
+
+    @Override
+    public List<Pincode> getAll(){
+        String query = "select * from pincodedata";
+        List<Pincode> list = this.jdbcTemplate.query(query,rowMapper);
+        return list;
+    }
 }

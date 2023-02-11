@@ -1,6 +1,8 @@
 package com.deepak.pincode.entities;
 
-public class Pincode {
+import java.io.Serializable;
+
+public class Pincode implements Serializable {
     private int pincode;
 
     private String office;
