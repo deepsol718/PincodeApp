@@ -2,10 +2,8 @@ package com.deepak.pincode.Serialize;
 
 import com.deepak.pincode.Trie.TrieNode;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import javax.servlet.http.HttpServlet;
+import java.io.*;
 
 public class SerializeTrie {
     private TrieNode root;
@@ -44,6 +42,8 @@ public class SerializeTrie {
 
         try{
             FileInputStream file = new FileInputStream(this.fileName);
+//            FileInputStream file = new FileInputStream(new File(getServletContext().getRealPath(this.fileName)));
+//            FileInputStream file = getServletContext().getResourceAsStream(this.fileName);
             ObjectInputStream ob = new ObjectInputStream(file);
 
             rootOut = (TrieNode) ob.readObject();

@@ -4,6 +4,7 @@ import com.deepak.pincode.entities.Pincode;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class TrieClass implements Serializable {
@@ -54,7 +55,10 @@ public class TrieClass implements Serializable {
     }
     
     public List<Pincode> searchByCity(String cityName){
-        cityName = cityName.toLowerCase();
+        cityName = checkCityName(cityName);
+        if(cityName == null || cityName.length() == 0){
+            return Arrays.asList(new Pincode[]{new Pincode(0,"NA","NA","NA")});
+        }
         return searchByCity(cityName, root);
     }
     
